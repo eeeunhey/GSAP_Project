@@ -1,0 +1,125 @@
+/* Google Fonts 불러오기: Manrope (200~800 두께 지원) */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+/* ========== 기본 초기화 (Reset) ========== */
+* {
+  margin: 0;               /* 기본 여백 제거 */
+  padding: 0;              /* 기본 패딩 제거 */
+  box-sizing: border-box;  /* 박스 크기 계산을 border까지 포함하도록 설정 */
+}
+
+/* ========== 전역 스타일 ========== */
+body {
+  font-family: "Manrope", sans-serif;  /* 기본 폰트 설정 */
+  background-color: #1a1a1a;           /* 전체 배경 어둡게 */
+}
+
+/* 모든 이미지 기본 스타일 */
+img {
+  width: 100%;             /* 부모 요소에 맞게 꽉 채움 */
+  height: 100%;            /* 부모 높이 채움 */
+  object-fit: cover;       /* 이미지 비율 유지하며 잘림 */
+}
+
+/* 제목 스타일 (주로 히어로 섹션) */
+h1 {
+  font-size: 4rem;         /* 큰 제목 크기 */
+  font-weight: 900;        /* 아주 두꺼운 글씨 */
+  letter-spacing: -0.15rem;/* 글자 간격 약간 좁게 */
+  line-height: 1.125;      /* 줄 간격 살짝 조밀하게 */
+  text-align: center;      /* 가운데 정렬 */
+}
+
+/* ========== 섹션 공통 스타일 ========== */
+/* hero, outro, about 섹션 공통 레이아웃 */
+.hero, .outro, .about {
+  position: relative;
+  width: 100%;             /* 화면 전체 폭 */
+  height: 100svh;          /* 뷰포트 높이 기준 (모바일 세이프 영역 포함) */
+  padding: 2rem;           /* 내부 여백 */
+  display: flex;           /* Flexbox 중앙 정렬 */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;        /* 자식 요소 넘침 숨김 */
+}
+
+/* hero/outro 섹션 내 이미지 크기 비율 */
+.hero-img, .outro-img {
+  width: 300px;            /* 고정 폭 */
+  aspect-ratio: 5/7;       /* 5:7 세로형 비율 */
+  overflow: hidden;        /* 넘치는 부분 숨김 */
+}
+
+/* ========== Services 영역 ========== */
+.services {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;  
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* services 섹션 헤더 (WHAT I DO 배너 등) */
+.services-header {
+  position: relative;
+  width: 100%;
+  padding: 0 2rem;
+  background-color: #1a1a1a;
+  will-change: transform;  /* 스크롤 애니메이션 대비 성능 최적화 */
+}
+
+/* 헤더 안의 이미지 설정 */
+.services-header img {
+  object-fit: contain;     /* 이미지 비율 유지하며 전체 보이기 */
+}
+
+/* 두 번째 헤더만 살짝 왼쪽으로 이동 */
+.services-header:nth-child(2) {
+  transform: translateX(-100%) translateY(0%);
+  z-index: 2;              /* 위쪽에 표시되도록 */
+}
+
+/* 본문 텍스트 영역 */
+.services-copy {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-top: 155svh;      /* 위쪽으로 긴 간격 확보 (스크롤 효과용) */
+  padding: 2rem 2rem 25svh 2rem;
+  text-align: center;
+}
+
+/* 텍스트 애니메이션 기본 상태 */
+.animate-text {
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+  color: #4f4f4f;           /* 기본 회색 텍스트 */
+  --clip-value: 100%;       /* CSS 변수로 클리핑 정도 제어 */
+}
+
+/* 텍스트 위를 덮는 흰색 마스크 애니메이션 효과 */
+.animate-text::before {
+  content: attr(data-text); /* 원래 텍스트 복제 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;              /* 흰색으로 덮임 */
+  clip-path: inset(0 0 var(--clip-value) 0); /* 아래쪽에서부터 잘려 올라감 */
+  will-change: clip-path;   /* 애니메이션 성능 최적화 */
+}
+
+/* ========== 반응형 디자인 (1000px 이하) ========== */
+@media (max-width: 1000px) {
+  h1 {
+    font-size: 2rem;        /* 모바일에서 글자 크기 축소 */
+    letter-spacing: -0.05rem;
+  }
+
+  .animate-text {
+    width: 100%;            /* 좁은 화면에서 전체 폭 사용 */
+  }
+}
