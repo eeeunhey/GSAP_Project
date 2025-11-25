@@ -7,6 +7,7 @@ const HomePage = () => {
         <div>
             <h1>
                 GSAP TO 학습 페이지 초기 작업
+                테스트 해보기
             </h1>
             <Link to="/gaspTo">Gsap To 페이지로 이동</Link>
         </div>
