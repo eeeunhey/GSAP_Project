@@ -68,9 +68,9 @@ export const GsapTo = () => {
         </>
       }
     >
-
+      {/* 👉 여기부터는 "실습 결과물" 영역 (children) */}
       <div className="space-y-10">
-
+        {/* 예제 1: 단순 이동 박스 */}
         <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-200">
           <p className="text-slate-500 text-sm mb-4">
             아래의 파란 박스는 페이지가 로드되면{" "}
@@ -86,7 +86,7 @@ export const GsapTo = () => {
           </div>
         </div>
 
-
+        {/* 예제 2: 반복 + 회전 + yoyo 박스 */}
         <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-200">
           <p className="text-slate-500 text-sm mb-4">
             아래의 남색 박스는{" "}
