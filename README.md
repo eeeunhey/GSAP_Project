@@ -1,6 +1,6 @@
 
 
-# 💚 Learn GSAP 
+#  Learn GSAP 
 
 
 **GSAP(GreenSock Animation Platform)**은
