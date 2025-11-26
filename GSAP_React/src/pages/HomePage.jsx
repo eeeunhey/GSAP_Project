@@ -44,9 +44,16 @@ const HomePage = () => {
 
           <LearningCard
             title="GSAP From"
-            description="시작 위치를 기준으로 애니메이션하는 방법을 다룰 예정입니다."
-            disabled={true}
-            tag="준비 중"
+            description={
+              <>
+                 <code className="px-1 py-0.5 rounded bg-slate-100 text-[11px]">
+                  gsap.from()
+                </code>
+                메소드를 활용한 애니메이션 실습
+              </>
+            }
+                      
+            to="/gaspFrom"
           />
 
           <LearningCard
