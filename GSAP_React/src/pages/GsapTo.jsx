@@ -26,7 +26,7 @@ export const GsapTo = () => {
 
   return (
     <LessonTemplate
-      title="GSAP"
+      title="GSAP TO"
       highlight="to() 학습하기"
       intro={
         <>
