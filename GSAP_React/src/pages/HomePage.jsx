@@ -56,6 +56,21 @@ const HomePage = () => {
             to="/gaspFrom"
           />
 
+          
+          <LearningCard
+            title="GSAP FromTo"
+            description={
+              <>
+                 <code className="px-1 py-0.5 rounded bg-slate-100 text-[11px]">
+                  gsap.fromTo()
+                </code>
+                메소드를 활용한 애니메이션 실습
+              </>
+            }
+                      
+            to="/gaspFromTo"
+          />
+
           <LearningCard
             title="Timeline"
             description="여러 애니메이션을 시간 순서대로 묶어서 컨트롤하는 연습 공간입니다."

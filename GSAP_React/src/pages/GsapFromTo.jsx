@@ -2,36 +2,33 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import LessonTemplate from "../components/LessonTemplate";
 
-export const GsapTo = () => {
+export const GsapFromTo = () => {
   useGSAP(() => {
-    gsap.formTo(
+    gsap.fromTo(
       "#blue-box",
-      { x: 0, 
-        rotation: 0,
-        borderRadius:'0%'
-      },
+      { x: 0, rotation: 0, borderRadius: "0%" },
       {
-       x:250,
-       repeat:-1,
-       yoyo: true,
-       borderRadius:'100%',
-       rotation:360,
-       duration:2,
-       ease: 'bounce.out'
+        x: 250,
+        repeat: -1,
+        yoyo: true,
+        borderRadius: "100%",
+        rotation: 360,
+        duration: 2,
+        ease: "bounce.out",
       }
     );
   }, []);
 
-  useGSAP(() => {
-    gsap.formTo("#indigo-box", {
-      x: 250,
-      repeat: -1,
-      yoyo: true,
-      rotation: 360,
-      duration: 2,
-      ease: "elastic",
-    });
-  }, []);
+  // useGSAP(() => {
+  //   gsap.formTo("#indigo-box", {
+  //     x: 250,
+  //     repeat: -1,
+  //     yoyo: true,
+  //     rotation: 360,
+  //     duration: 2,
+  //     ease: "elastic",
+  //   });
+  // }, []);
 
   return (
     <LessonTemplate
@@ -75,6 +72,8 @@ export const GsapTo = () => {
               상태 → 새로운 상태
               <br />– <code className="text-indigo-600">gsap.from()</code> :
               시작 상태 → 현재 상태
+              <br />– <code className="text-indigo-600">gsap.fromTo()</code> :
+              시작 상태(내가지정) → 현재 상태(내가 지정)
             </p>
           </div>
         </>
@@ -83,9 +82,9 @@ export const GsapTo = () => {
       <div className="space-y-10">
         <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-200">
           <p className="text-slate-500 text-sm mb-4">
-            아래의 파란 박스는 페이지가 로드되면{" "}
-            <code className="text-indigo-600">gsap.to()</code> 로 오른쪽 아래로
-            이동합니다.
+            아래의 파란박스는 둥근 원의 형태로 바뀐다{" "}
+            <code className="text-indigo-600">gsap.Fromto()</code>
+            초기 상태를 박스로 지정하고 최신상태를 원으로 반영하라고 셋팅했다
           </p>
 
           <div className="relative h-[500px] bg-slate-100 rounded-xl p-6 overflow-hidden">
@@ -93,7 +92,7 @@ export const GsapTo = () => {
           </div>
         </div>
 
-        <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-200">
+        {/* <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-200">
           <p className="text-slate-500 text-sm mb-4">
             아래의 남색 박스는{" "}
             <code className="text-indigo-600">gsap.to()</code> 를 사용해
@@ -108,7 +107,7 @@ export const GsapTo = () => {
               className="w-20 h-20 bg-indigo-500 rounded-lg"
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </LessonTemplate>
   );
